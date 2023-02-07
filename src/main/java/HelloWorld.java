@@ -1,4 +1,4 @@
-package hello;
+import java.util.Scanner;
 
 public class HelloWorld {
     public static void main(String[] args) {
@@ -41,10 +41,24 @@ public class HelloWorld {
 //        x /= y;
 //        y -= x;
 
-        System.out.println(x);
-//        System.out.println(y);
-        int max = Integer.MAX_VALUE;
-        System.out.println(max);
+//        System.out.println(x);
+////        System.out.println(y);
+//        int max = Integer.MAX_VALUE;
+//        System.out.println(max);
+//
+//        Scanner input = new Scanner(System.in);
+//        System.out.println("Enter your name: ");
+////        String aName = input.next();
+//        String aName = input.nextLine();
+//        System.out.println("Your name is " + aName);
+//
+//        input.nextLine();
+//
+//        System.out.println("Enter your age: ");
+//        int age = input.nextInt();
+//        System.out.println("Your age is: " + age);
+//
+//        input.close();
 
     }
 }
