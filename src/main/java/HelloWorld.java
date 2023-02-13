@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class HelloWorld {
     public static void main(String[] args) {
+//        String x = (String) 89;
 //        program starts here!
 //        System.out.println("Hello World");
 //        System.out.print("Hello \n");
@@ -10,15 +11,15 @@ public class HelloWorld {
 //        byte mybyte = 127;
 //        mybyte += 1;
 //        System.out.println(mybyte);
-        int myFavoriteNumber = 9;
-        System.out.println(myFavoriteNumber);
-
-        String myString = "Hey y'all";
-        System.out.println(myString);
-
-        double myNumber;
-        myNumber = 3.14;
-        System.out.println(myNumber);
+//        int myFavoriteNumber = 9;
+//        System.out.println(myFavoriteNumber);
+//
+//        String myString = "Hey y'all";
+//        System.out.println(myString);
+//
+//        double myNumber;
+//        myNumber = 3.14;
+//        System.out.println(myNumber);
 
 //        int x = 5;
 //        System.out.println(x++);
@@ -31,8 +32,8 @@ public class HelloWorld {
 //        Object o = theNumberThree;
 //        int three = (int) o;
 //        int three = (int) "three";
-        int x = 4;
-        x += 5;
+//        int x = 4;
+//        x += 5;
 //        int x = 3;
 //        int y = 4;
 //        y *= x;

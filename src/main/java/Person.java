@@ -22,14 +22,25 @@ public class Person {
     }
 
     public static void main(String[] args) {
-        Person jennie = new Person("Jennie");
-//        jennie.name = "Jennie";
-//        System.out.println(jennie.getName());
-        System.out.println(jennie.sayHello());
+//        Person person1 = new Person("John");
+//        Person person2 = new Person("John");
+//        System.out.println(person1.getName().equals(person2.getName()));
+//        System.out.println(person1 == person2);
 
-        Person jack = new Person("Jack");
-//        jack.name = "Jack";
-        System.out.println(jack.sayHello());
+//        Person person1 = new Person("John");
+//        Person person2 = person1;
+//        System.out.println(person1 == person2);
+//
+        Person person1 = new Person("John");
+        Person person2 = person1;
+
+        System.out.println(person1.getName());
+        System.out.println(person2.getName());
+        person2.setName("Jane");
+        System.out.println(person1.getName());
+        System.out.println(person2.getName());
+
+
     }
 
 }
