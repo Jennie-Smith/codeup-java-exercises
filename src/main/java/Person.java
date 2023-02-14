@@ -1,9 +1,15 @@
 public class Person {
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                '}';
+    }
 
     private String name;
 
     public Person(String myName){
-        name = myName;
+        this.name = myName;
     }
 
     public String getName(){

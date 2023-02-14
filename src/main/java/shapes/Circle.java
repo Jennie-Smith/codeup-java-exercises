@@ -7,7 +7,7 @@ public class Circle {
     private double radius;
 
     public Circle(double Radius) {
-        radius = Radius;
+        this.radius = Radius;
     }
 
     public double getArea(){

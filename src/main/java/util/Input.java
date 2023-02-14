@@ -14,13 +14,15 @@ public class Input {
     }
 
     public String getString(){
-        String input = scanner.nextLine();
-        return input;
+//        System.out.printf("What is your name?%n");
+//        String name = scanner.nextLine();
+//        return String.format("Hello " + name);
+        return scanner.nextLine();
     }
 
     public boolean yesNo(){
-        String input = scanner.nextLine();
-        if (Objects.equals(input, "y") || Objects.equals(input, "yes")){
+        String input = getString();
+        if (input.equalsIgnoreCase("y") || input.equalsIgnoreCase("yes")){
             return true;
         } else {
             return false;
@@ -37,12 +39,13 @@ public class Input {
     }
 
     public int getInt(){
-        System.out.print("Enter a number between 1 and 10: ");
-        int num = scanner.nextInt();
-        if (num < 1 || num > 10) {
-            return getInt();
-        }
-        return num;
+//        System.out.print("Enter a number between 1 and 10: ");
+//        int num = scanner.nextInt();
+//        if (num < 1 || num > 10) {
+//            return getInt();
+//        }
+//        return num;
+        return scanner.nextInt();
     }
 
     public double getDouble(double min, double max){
@@ -55,12 +58,13 @@ public class Input {
     }
 
     public double getDouble(){
-        System.out.print("Enter a number a double: ");
-        double num = scanner.nextDouble();
-//        if (num < 1 || num > 10) {
-//            return getDouble();
-//        }
-        return (double) num;
+//        System.out.print("Enter a number a double: ");
+//        double num = scanner.nextDouble();
+////        if (num < 1 || num > 10) {
+////            return getDouble();
+////        }
+//        return (double) num;
+        return scanner.nextDouble();
     }
 
 }
