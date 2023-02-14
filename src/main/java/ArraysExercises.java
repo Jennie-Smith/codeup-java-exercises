@@ -9,11 +9,7 @@ public class ArraysExercises {
     public static String addPerson(Person[] myArray, Person person){
         Person [] newPeople = copyOf(myArray, myArray.length+1 );
         newPeople[newPeople.length -1] = person;
-//         find last index of newPeople and set equal to Person person;
         return Arrays.toString(newPeople);
-
-//        myArray Arrays.copyOf(myArray, (myArray.length)+1);
-//        return myArray;
     }
 
 //    public static String getRandom(String[] array) {
