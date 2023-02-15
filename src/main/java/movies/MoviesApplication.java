@@ -18,70 +18,66 @@ public class MoviesApplication {
         return menu;
     }
 
-    public static String getMovies(Movie[] movies, String category){
-        for (int i = 0; i < movies.length; i++) {
-            if (category.equals(movies[i].getCategory("animated"))){
-                System.out.println(movies[i]);
-            } else if (category.equals(movies[i].getCategory("drama"))){
-                System.out.println(movies[i]);
-            }else if (category.equals(movies[i].getCategory("horror"))){
-                System.out.println(movies[i]);
-            }else if (category.equals(movies[i].getCategory("scifi"))){
-                System.out.println(movies[i]);
-            }else if (category.equals("all")){
-                System.out.println(movies[i]);
+    public static void getMovies(String category){
+        for (Movie movie: movies) {
+            if(movie.getCategory().equals(category)){
+                System.out.println(movie);
             }
         }
-        return category;
     }
 
-    public static String getMovies(int choice){
+
+    public static String getChoice(int choice){
         switch(choice)
         {
-            case 0:
-                System.out.println("Exit");
-                break;
             case 1:
 //                get movie genre function;
-                return getMovies(movies, "all");
+                getMovies("all");
+                break;
             case 2:
 //                get movie genre function;
-                return getMovies(movies, "animated");
+                getMovies("animated");
+                break;
             case 3:
 //                get movie genre function;
-                return getMovies(movies, "drama");
+                getMovies("drama");
+                break;
             case 4:
 //                get movie genre function;
-                return getMovies(movies, "horror");
+                getMovies("horror");
+                break;
             case 5:
 //                get movie genre function;
-                return getMovies(movies, "scifi");
+                getMovies("scifi");
+                break;
             default:
                 System.out.println("miss");
-                return "miss";
+                break;
         }
-          return "Bye!";
+        return "yay";
     }
 
 
     public static void main(String[] args) {
-        System.out.printf(menu());
+//        System.out.printf(menu());
         Input input = new Input();
         movies = MoviesArray.findAll();
         String userInput = "";
-        boolean done = false;
+        boolean done = true;
 //        getMovies(movies);
         do{
+            System.out.printf(menu());
             System.out.println("Enter number: ");
             int choice = input.getInt();
-            System.out.println(getMovies(choice));
-
-            System.out.print("Continue speaking to Bob? [y/N] ");
-            String userInput = input.nextLine();
-            if (!userInput.equals("y")){
+            if (choice == 0){
+                System.out.println("Bye Bye!");
                 break;
             }
-        }while(true);
+            System.out.println(getChoice(choice));
+
+
+
+        }while(done);
 
 
 

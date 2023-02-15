@@ -1,9 +1,5 @@
 package util;
 
-import org.w3c.dom.ls.LSOutput;
-
-import java.util.Locale;
-import java.util.Objects;
 import java.util.Scanner;
 
 public class Input {
@@ -13,7 +9,7 @@ public class Input {
         scanner = new Scanner(System.in);
     }
 
-    public String getString(){
+    public String getString(String category){
 //        System.out.printf("What is your name?%n");
 //        String name = scanner.nextLine();
 //        return String.format("Hello " + name);
@@ -21,7 +17,7 @@ public class Input {
     }
 
     public boolean yesNo(){
-        String input = getString();
+        String input = getString("enter movie category");
         if (input.equalsIgnoreCase("y") || input.equalsIgnoreCase("yes")){
             return true;
         } else {
@@ -29,11 +25,11 @@ public class Input {
         }
     }
 //
-    public int getInt(int min, int max){
+    public int getInt(int min, int max, String s){
         System.out.printf("Enter a number between %d and %d: ", min, max);
         int num = scanner.nextInt();
         if (num < min || num > max) {
-            return getInt(min, max);
+            return getInt(min, max, "Enter your choice: ");
         }
         return num;
     }

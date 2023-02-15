@@ -6,18 +6,18 @@ import static java.util.Arrays.copyOf;
 
 public class ArraysExercises {
 
-    public static String addPerson(Person[] myArray, Person person){
-        Person [] newPeople = copyOf(myArray, myArray.length+1 );
-        newPeople[newPeople.length -1] = person;
-        return Arrays.toString(newPeople);
+    public static Person[] addPerson(Person[] myArray, Person newperson){
+        Person [] newPeople = Arrays.copyOf(myArray, myArray.length+1 );
+        newPeople[newPeople.length -1] = newperson;
+        return newPeople;
     }
-
-//    public static String getRandom(String[] array) {
-//        Random randomArrayIndex = new Random();
-//        int index = randomArrayIndex.nextInt(array.length);
-//        return array[index];
-//
+//     lecture example below
+//    public static Person [] addPerson(Person[] people, Person newPerson){
+//            Person [] newArray = Arrays.copyOf(people, people.length + 1);
+//            newArray[newArray.length - 1] = newPerson;
+//            return newArray;
 //    }
+//    functions public, variables private
 
     public static void main(String[] args) {
         int[] numbers = {1, 2, 3, 4, 5};
@@ -30,10 +30,15 @@ public class ArraysExercises {
         System.out.println(Arrays.toString(people));
         System.out.println(people[1]);
 
+        for(Person person : people){
+            System.out.println("Hey " + person.getName());
+        }
+
         System.out.println("Enter a new name: ");
-        String newName = arrayInput.getString();
-        System.out.println(addPerson(people, new Person(newName)));
-//        System.out.println(newName);
+        String newName = arrayInput.getString("enter movie category");
+
+        people = addPerson(people, new Person(newName));
+        System.out.println(Arrays.toString(people));
 
     }
 
