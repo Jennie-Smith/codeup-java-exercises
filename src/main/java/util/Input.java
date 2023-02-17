@@ -66,4 +66,7 @@ public class Input {
         return scanner.nextDouble();
     }
 
+    public String nextLine() {
+        return " ";
+    }
 }

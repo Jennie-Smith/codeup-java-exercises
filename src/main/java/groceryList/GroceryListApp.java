@@ -3,42 +3,42 @@ package groceryList;
 import util.Input;
 
 public class GroceryListApp {
-    public static void main(String[] args) {
+    public static Input userInput(){
         Input input = new Input();
-
-
-
-
-        boolean done = true;
-        do{
-//            print menu 1 if they would like to create a grocery list
-            System.out.println("Would you like to create a grocery list? [y/N]");
-            String makeListChoice = input.getString();
-            if (!makeListChoice.equals("y")){
-                done = false;
-                System.out.println("... come back when you wish to make a list, please.");
-            }
-
-//            menu 2 would like to add a new item
-            System.out.println("Would you like to add a new item? [y/N]");
-            String addNewItemChoice = input.getString();
-            if (addNewItemChoice.equals("y")){
-//              menu 3 if yes give ordered list of grocery categories,
-//              get name of item, and
-//              how many of item
-
-            }
-
-
-
-            System.out.println("Finish List? [y/N]");
-            String choice = input.getString();
-            if(!choice.equals("y")){
-                done = false;
-//                sout out their list
-                System.out.println("Bye!");
-            }
-        }while(done);
+        return input;
     }
+    public static void main(String[] args) {
+//        Input input = new Input();
+        boolean done = true;
+        System.out.println("Would you like to create a grocery list? [y/N]");
+        String makeListChoice = userInput().getString();
+        if (!makeListChoice.equals("y")) {
+            System.out.println("... come back when you wish to make a list, please.");
+        }
+        System.out.println("Give your list a name: ");
+        String yourListNameInput = userInput().getString();
+        GroceryList yourList = new GroceryList(yourListNameInput);
 
+        while(done){
+            System.out.println("Would you like to add a new item? [y/N]");
+            String addNewItemChoice = userInput().getString();
+
+            if (addNewItemChoice.equals("y")) {
+                yourList.addItem(getCategoryName());
+            } else {
+                System.out.println(yourList);
+                done = false;
+            }
+        }
+    }
+    public static ListItems getCategoryName(){
+        System.out.println("Enter category name: ");
+        String categoryInput = userInput().getString();
+        System.out.println("Enter food name: ");
+        String foodNameInput =  userInput().getString();
+        System.out.println("Enter quantity of food");
+        int quantityInput =  userInput().getInt();
+        ListItems userList = new ListItems(categoryInput, foodNameInput, quantityInput);
+        return userList;
+    }
 }
