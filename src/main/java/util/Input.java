@@ -8,6 +8,9 @@ public class Input {
     public Input() {
         scanner = new Scanner(System.in);
     }
+    public String getString(){
+        return scanner.nextLine();
+    }
 
     public String getString(String category){
 //        System.out.printf("What is your name?%n");
