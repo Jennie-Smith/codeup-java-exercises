@@ -44,7 +44,16 @@ public class Input {
 //            return getInt();
 //        }
 //        return num;
-        return scanner.nextInt();
+//        return scanner.nextInt();
+        String s = getString();
+        int userNum = 0;
+        try{
+            userNum = Integer.valueOf(s);
+        }catch (Exception e){
+            System.out.println("Hey that's not a number!");
+            userNum =  getInt();
+        }
+        return userNum;
     }
 
     public double getDouble(double min, double max){
@@ -63,10 +72,29 @@ public class Input {
 ////            return getDouble();
 ////        }
 //        return (double) num;
-        return scanner.nextDouble();
+//        return scanner.nextDouble();
+        String s = getString();
+        double userNum = 0;
+        try{
+            userNum = Double.valueOf(s);
+        }catch (Exception e){
+            System.out.println("Hey that's not a number!");
+            return getInt();
+        }
+        return userNum;
     }
 
     public String nextLine() {
         return " ";
+    }
+
+    public static void main(String[] args) {
+        Input myInput = new Input();
+
+//        don't want this to crash
+        int anInt = myInput.getInt();
+        System.out.println(anInt);
+        double aDouble = myInput.getDouble();
+        System.out.println(aDouble);
     }
 }

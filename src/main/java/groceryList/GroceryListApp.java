@@ -1,7 +1,7 @@
 package groceryList;
 
 import util.Input;
-
+// input.getString(); get newline out of buffer
 public class GroceryListApp {
     public static Input userInput(){
         Input input = new Input();
