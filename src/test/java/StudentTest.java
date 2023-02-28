@@ -13,6 +13,9 @@ public class StudentTest {
         test.addGrade(60);
         test.addGrade(60);
         jennie = new Student(43902843, "Jennie");
+        jennie.addGrade(50);
+        jennie.addGrade(30);
+        jennie.addGrade(90);
     }
 //The Student class should have a constructor that sets both the name and id property,
 // it initializes the grades property as an empty ArrayList.

@@ -17,7 +17,16 @@ public class CohortTest {
     public void testStudentData(){
         cohortTest = new Cohort();
         test = new Student(5490385, "test");
+        test.addGrade(90);
+        test.addGrade(60);
+        test.addGrade(60);
+//        average 70
         jennie = new Student(43902843, "Jennie");
+        jennie.addGrade(50);
+        jennie.addGrade(30);
+        jennie.addGrade(90);
+//        56.66667
+//        63.3333
         cohortTest.addStudent(test);
         cohortTest.addStudent(jennie);
     }
@@ -30,6 +39,18 @@ public class CohortTest {
         cohortTest.addStudent(addStudentTest);
         assertSame(addStudentTest, cohortTest.getStudents().get(cohortTest.getStudents().size() - 1));
     }
+
+    @Test
+    public void testInstanceCanGetCurrentList(){
+        assertEquals(cohortTest.getStudents(), cohortTest.getStudents());
+    }
+
+    @Test
+    public void testGetAverageOfAllStudents(){
+        cohortTest.getCohortAverage();
+        assertEquals(63.3, cohortTest.getCohortAverage(), 0.1);
+    }
+
 
 
 }
